@@ -1,0 +1,69 @@
+<app-header></app-header>
+<div class="container-fluid">
+    <div class="row">
+    <div class="col-4">
+<div class="sidebar">
+    <h2>Admin Dashboard</h2>
+<ul>
+    <li>Employees</li>
+    <a href="#" routerLink="/admin/Add-Employee"><li class="drop">Add Employees</li></a>
+    <a href="#" routerLink="/admin/Employee-list"><li class="drop">Employees List</li></a>
+ 
+
+   <li>Employers</li>
+  <a href="#" routerLink="/admin/Add-Employer"><li class="drop">Add Employees</li></a>
+  <a href="#" routerLink="/admin/Employe-list"><li class="drop">Employer List</li></a>
+
+    <li>Work Requirement</li>
+    <a href="#" routerLink="/admin/Add-WorkReq"><li class="drop">Add Work Requirement</li></a>
+    <a href="#" routerLink="/admin/WorkReq-List"><li class="drop">Work Requirement list</li></a>
+  
+</ul>
+</div>
+</div>
+<div class="col-8">
+    <div class="row card-row">
+<div class="col-lg-3 col-md-3 col-sm-1 ad-dash2">
+   <div class="ad-Card">
+       <div class="card-body">
+       <span><i class="fas fa-address-card"></i></span>
+        
+        <h3 class="ad-card-h">23</h3>
+        <p class="ad-card-p">Employees</p>
+       </div>
+
+   </div>
+</div>
+<div class="col-lg-3 col-md-3 col-sm-1 ad-dash2">
+    <div class="ad-Card">
+        <div class="card-body">
+            <h3 class="ad-card-h">23</h3>
+            <p class="ad-card-p">Employers</p>
+        </div>
+ 
+    </div>
+ </div>
+ <div class="col-lg-3 col-md-3 col-sm-1 ad-dash2">
+    <div class="ad-Card">
+        <div class="card-body">
+            <h3 class="ad-card-h">23</h3>
+            <p class="ad-card-p">Work Requirement </p>
+        </div>
+ 
+    </div>
+ </div>
+ <div class="col-lg-3 col-md-3 col-sm-1 ad-dash2">
+    <div class="ad-Card">
+        <div class="card-body">
+            <h3 class="ad-card-h">23</h3>
+           
+            <p class="ad-card-p"> <i class="fas fa-heart" ></i>Engaged Employees</p>
+        </div>
+ 
+    </div>
+ </div>
+</div>
+<router-outlet></router-outlet>
+</div>
+</div>
+</div>

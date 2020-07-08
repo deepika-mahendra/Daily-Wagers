@@ -1,0 +1,60 @@
+
+<div class="container-fluid"  style="background-color: white;"> 
+    <h4>Add Employee</h4>
+    <form class="form-container">
+	<div class="row">
+		<div class="col-6">
+            <mat-form-field appearance="fill">
+                <mat-label>User Name</mat-label>
+                <mat-select [(ngModel)]="selectedValue" name="food">
+                  <mat-option *ngFor="let food of foods" [value]="food.value">
+                    {{food.viewValue}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+		</div>
+		<div class="col-6">
+            <mat-form-field appearance="fill">
+                <input matInput placeholder="Email" type="email" >
+                
+              </mat-form-field>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-6">
+            <mat-form-field appearance="fill">
+                <input matInput placeholder="Skills" type="text" >
+                
+              </mat-form-field>
+		</div>
+		<div class="col-6">
+            <mat-form-field appearance="fill">
+                <input matInput placeholder="Experience(yrs)" type="number" >
+                
+              </mat-form-field>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-6">
+            <mat-form-field appearance="fill">
+                <input matInput placeholder="pay" type="text" >
+                
+              </mat-form-field>
+		</div>
+		<div class="col-6">
+            <mat-form-field appearance="fill">
+                <input matInput placeholder="duration(hrs)" type="number" >
+                
+              </mat-form-field>
+		</div>
+	</div>
+	
+    <button
+    mat-raised-button
+    color="primary"
+    class="login-button">
+    Add Employee
+  </button>
+</form>
+</div>
+
