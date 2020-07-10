@@ -37,8 +37,8 @@ export class LoginComponent implements OnInit {
       this._snackBar.open('login Successful', 'Success', {
         duration: 2000,
       });
-
-      this.router.navigate(['user']);
+      
+      this.router.navigate(['admin/home']);
       console.log(data);
   
     },

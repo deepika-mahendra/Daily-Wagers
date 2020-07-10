@@ -13,11 +13,17 @@ import { AddWorkrequirementComponent } from './add-workrequirement/add-workrequi
 import { WorkrequirementListComponent } from './workrequirement-list/workrequirement-list.component';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { pathToFileURL } from 'url';
+import { RegistrationComponent } from './registration/registration.component';
+import { AdmincardsComponent } from './admincards/admincards.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/login',pathMatch:'full'},
   {path:'admin',component:AdminDashboardComponent,
   children: [
+    {
+      path:  'home',
+      component:  AdmincardsComponent,
+      },
     {
     path:  'Add-Employee',
     component:  AddEmployeeComponent,
@@ -49,6 +55,10 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'user',component:UserdashboardComponent,
   children: [
+    {
+      path:  'registration',
+      component:  RegistrationComponent
+      },
     {
     path:  'requirement',
     component:  ViewRequirementsComponent

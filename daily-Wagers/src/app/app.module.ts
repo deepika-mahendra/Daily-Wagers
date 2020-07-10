@@ -32,9 +32,11 @@ import { UsersComponent } from './users/users.component';
 import {MatSelectModule} from '@angular/material/select';
 import {ReactiveFormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-
-
-
+import { RegistrationComponent } from './registration/registration.component';
+import { AdmincardsComponent } from './admincards/admincards.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   
@@ -53,7 +55,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     AddEmployerComponent,
     AddWorkrequirementComponent,
     WorkrequirementListComponent,
-    UsersComponent
+    UsersComponent,
+    RegistrationComponent,
+    AdmincardsComponent
 
   ],
   imports: [
@@ -74,6 +78,10 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatSelectModule,
     ReactiveFormsModule,
     MatSnackBarModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatExpansionModule
+
    
   ],
   providers: [],
