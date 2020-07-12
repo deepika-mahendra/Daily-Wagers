@@ -5,7 +5,12 @@ import mongoose from'mongoose';
 import  bodyParser from 'body-parser';
 import cors from 'cors';
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/dailyWagers');
+mongoose.connect('mongodb://localhost/dailyWagers',{
+    useNewUrlParser: true,
+   useUnifiedTopology: true
+   },
+   
+   );
 const app = express();
 const PORT = 3000;
 app.use(cors());

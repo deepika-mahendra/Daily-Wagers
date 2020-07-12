@@ -1,4 +1,10 @@
 import express from 'express';
 import { userRouter } from './resources/users/user.router';
+import { registrationRouter } from './resources/registration/registration.router';
+import { requireRouter } from './resources/requirement/requirement.router';
+import {skillsRouter} from './resources/skills/skills.router';
 export const restRouter = express.Router();
 restRouter.use('/user',userRouter);
+restRouter.use('/emp',registrationRouter);
+restRouter.use('/req',requireRouter);
+restRouter.use('/skills',skillsRouter);
