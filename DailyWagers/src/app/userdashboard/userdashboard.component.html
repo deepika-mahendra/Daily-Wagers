@@ -1,0 +1,20 @@
+<app-header></app-header>
+<div class="container-fluid">
+    <div class="row">
+    <div class="col-3">
+<div class="sidebar">
+    <h2>Dashboard</h2>
+<ul>
+  
+    <a href="#"  routerLink="/user/profile" ><li >View Profile </li></a>
+   <a href="#"  routerLink="/user/requirement"><li >View requirements</li></a>
+   <a href="#"  routerLink="/user/history"><li>View Work History</li></a>
+ 
+</ul>
+</div>
+</div>
+<div class="col-9" style="margin-top: 64px;">
+<router-outlet></router-outlet>
+</div>
+</div>
+</div>
