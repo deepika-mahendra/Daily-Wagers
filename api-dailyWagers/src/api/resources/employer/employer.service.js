@@ -6,12 +6,12 @@ export default{
             location:Joi.string().required(),
             contact:Joi.number().required(),
             alternate:Joi.number().required(),
-            official_mail:Joi.string().email().required(),
+            Office_email:Joi.string().email().required(),
             point_of_contact:Joi.string().required(),
             type:Joi.string().required(),
-            url:Joi.string().required(),
+        
             isActive:Joi.string().required(),
-            created_date:Joi.date().required(),
+            created_dt:Joi.date().required(),
           
         });
         const {error,value} = Joi.validate(body,schema);

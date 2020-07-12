@@ -18,7 +18,7 @@ const employerSchema = new schema({
         type:Number,
         required:true
     },
-    official_mail:{
+    Office_email:{
         type:String,
         required:true
     },
@@ -30,15 +30,12 @@ const employerSchema = new schema({
         type:String,
         required:true
     },
-    url:{
-        type:String,
-        required:true
-    },
+   
     isActive:{
         type:String,
         
     },
-    created_date:{
+    created_dt:{
         type:Date,
        
     },
