@@ -32,4 +32,4 @@ const userSchema = new Schema({
         type:Boolean
     }
 },{collection:'users'});
-export default new mongoose.model('users',userSchema);
+export default new mongoose.model('user',userSchema);
