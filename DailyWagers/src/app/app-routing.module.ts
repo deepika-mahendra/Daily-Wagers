@@ -15,6 +15,7 @@ import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { pathToFileURL } from 'url';
 import { RegistrationComponent } from './registration/registration.component';
 import { AdmincardsComponent } from './admincards/admincards.component';
+import { UserWorkCardComponent } from './user-work-card/user-work-card.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/login',pathMatch:'full'},
@@ -55,13 +56,14 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'user',component:UserdashboardComponent,
   children: [
+    
     {
       path:  'registration',
       component:  RegistrationComponent
       },
     {
     path:  'requirement',
-    component:  ViewRequirementsComponent
+    component:  UserWorkCardComponent
     },
     {
     path:  'profile',

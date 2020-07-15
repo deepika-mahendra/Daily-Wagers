@@ -4,8 +4,8 @@ export default{
         const schema = Joi.object().keys({
             employee_id:Joi.string().required(),
             req_id:Joi.string().required(),
-            isActive:Joi.string().required(),
-            created_dt:Joi.date().required(),
+            isActive:Joi.string(),
+            created_dt:Joi.date(),
           
         });
         const {error,value} = Joi.validate(body,schema);

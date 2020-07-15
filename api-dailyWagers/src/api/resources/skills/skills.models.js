@@ -9,10 +9,12 @@ const skillSchema = new schema({
     },
     isActive:{
         type:String,
+        default:"true"
         
     },
     created_date:{
         type:Date,
+        default:Date.now
        
     },
 },{collection:'skills'});

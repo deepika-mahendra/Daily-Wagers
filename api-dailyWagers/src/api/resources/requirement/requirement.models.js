@@ -1,56 +1,62 @@
 import mongoose from 'mongoose';
 import { urlencoded } from 'body-parser';
+import { date } from 'joi';
 const schema = mongoose.Schema;
 const requirementSchema = new schema({
+    title:{
+        type:String,
+      
+    },
     description:{
         type:String,
-        required:true
+       
     },
-    employee_id:{
+    employer:{
         type:String,
     },
     location:{
         type:String,
-        required:true
+      
     },
     skill_req:{
         type:String,
-        required:true
+      
     },
-    req_workers:{
+    worker_req:{
         type:Number,
-        required:true
+      
     },
     duration:{
         type:Number,
-        required:true
+      
     },
-    start_date:{
+    start_dt:{
         type:Date,
-        required:true
+      
     },
-    end_date:{
+    end_dt:{
         type:Date,
-        required:true
+      
     },
     payment:{
         type:Number,
-        required:true
+      
     },
     benifits:{
         type:String,
-        required:true
+      
     },
     url:{
         type:String,
-        required:true
+      
     },
     isActive:{
         type:String,
-        
+        default:"True"
     },
     created_date:{
         type:Date,
+        default:Date.now
        
     },
 },{collection:'requirement'});

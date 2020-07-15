@@ -33,10 +33,12 @@ const employerSchema = new schema({
    
     isActive:{
         type:String,
+        default:"True"
         
     },
     created_dt:{
         type:Date,
+        default:Date.now
        
     },
 },{collection:'Employer'});

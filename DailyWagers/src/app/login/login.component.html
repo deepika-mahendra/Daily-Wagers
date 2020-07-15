@@ -60,6 +60,7 @@
          
           <mat-form-field>
               <input  matInput  placeholder="Email"  formControlName="email"  >
+              
               <mat-error *ngIf="signupForm.controls.email.invalid">Email is required</mat-error>
               <mat-icon matSuffix>email</mat-icon>
             </mat-form-field>

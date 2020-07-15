@@ -10,8 +10,8 @@ export default{
             point_of_contact:Joi.string().required(),
             type:Joi.string().required(),
         
-            isActive:Joi.string().required(),
-            created_dt:Joi.date().required(),
+            isActive:Joi.string(),
+            created_dt:Joi.date(),
           
         });
         const {error,value} = Joi.validate(body,schema);
