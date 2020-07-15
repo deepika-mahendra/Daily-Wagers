@@ -63,7 +63,7 @@ const routes: Routes = [
       },
     {
     path:  'requirement',
-    component:  UserWorkCardComponent
+    component: ViewRequirementsComponent
     },
     {
     path:  'profile',

@@ -29,7 +29,7 @@ import { EmployerListComponent } from './employer-list/employer-list.component';
 import { AddEmployerComponent } from './add-employer/add-employer.component';
 import { AddWorkrequirementComponent } from './add-workrequirement/add-workrequirement.component';
 import { WorkrequirementListComponent } from './workrequirement-list/workrequirement-list.component';
-import { UsersComponent } from './users/users.component';
+
 import {MatSelectModule} from '@angular/material/select';
 import {ReactiveFormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
@@ -57,7 +57,7 @@ import { UserWorkCardComponent } from './user-work-card/user-work-card.component
     AddEmployerComponent,
     AddWorkrequirementComponent,
     WorkrequirementListComponent,
-    UsersComponent,
+   
     RegistrationComponent,
     AdmincardsComponent,
     UserWorkCardComponent

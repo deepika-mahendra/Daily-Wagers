@@ -7,19 +7,13 @@ import { WorkreqService } from '../add-workrequirement/workreq.service';
   styleUrls: ['./user-work-card.component.scss']
 })
 export class UserWorkCardComponent implements OnInit {
-  workList:any=[];
 
-  constructor(private workreqService:WorkreqService) { }
+
+  constructor() { }
 
   ngOnInit(): void {
-    this.getEmployers();
+  
   }
 
-  getEmployers(){
-    this.workreqService.getWorkreq().subscribe(data => {
-  this.workList = data;
-  console.log(this.workList);
-    },
-    err=> console.log(err))
-  }
+ 
 }
