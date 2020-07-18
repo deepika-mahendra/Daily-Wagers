@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from '../login/shared.service';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
+  userObj:any={};
+  isHidden:Boolean=true;
+  constructor(private sharedService:SharedService) { }
 
   ngOnInit(): void {
+    this.sharedService.currentData.subscribe(data => {
+      if(data== ''){
+        this.isHidden = true;
+        this.userObj = null;
+      }
+      else{
+        this.isHidden =false;
+        this.userObj =data;
+      }
+    })
   }
 
 }

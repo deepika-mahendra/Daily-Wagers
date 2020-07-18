@@ -1,8 +1,10 @@
 import mongoose from 'mongoose';
+import { date } from 'joi';
 const schema = mongoose.Schema;
 const registrationSchema = new schema({
     employee_id:{
-        type:Number,
+        type:String,
+        required:true
         
     },
     name:{
@@ -49,7 +51,7 @@ const registrationSchema = new schema({
         type:String,
     
     },
-    skills:{
+    skill_req:{
         type:String,
         required:true
     },
@@ -59,10 +61,12 @@ const registrationSchema = new schema({
     },
     created_date:{
         type:String,
+        default:date.now
       
     },
     isActive:{
-        type:Number
+        type:Number,
+        default:true
     }
 },{collection:'Employee'});
 export default new mongoose.model('Emp',registrationSchema);

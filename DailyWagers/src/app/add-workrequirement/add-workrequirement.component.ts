@@ -73,6 +73,10 @@ export class AddWorkrequirementComponent implements OnInit {
     this.createRequirementForm.value.employer = this.createRequirementForm.value.employer.name;
     this.createRequirementForm.value.skill_req = this.createRequirementForm.value.skill_req.name;
     this.workreqService.createWorkreq( this.createRequirementForm.value).subscribe(data=>{
+      this._snackBar.open('Workrequirement Added', 'Successfully', {
+        duration: 2000,
+      });
+      
       console.log(data);
   
     },

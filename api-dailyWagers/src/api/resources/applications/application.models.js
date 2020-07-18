@@ -1,18 +1,19 @@
 import mongoose from 'mongoose';
-import { urlencoded } from 'body-parser';
-import { date } from 'joi';
-
-
+import Emp from '../registration/registration.models';
+import require from '../requirement/requirement.models';
 const schema = mongoose.Schema;
+import mongoosePaginate from 'mongoose-paginate';
 const applicationSchema = new schema({
     req_id:{
-        type:String,
+        ref:'require',
+        type:schema.Types.ObjectId,
         required:true
     },
     employee_id:{
-        type:String,
-        required:true
-        
+        ref:'Emp',
+        type:schema.Types.ObjectId,
+        required:true,
+
     },
     isActive:{
         type:String,
@@ -24,4 +25,5 @@ const applicationSchema = new schema({
        
     },
 },{collection:'application'});
+applicationSchema.plugin(mongoosePaginate);
 export default new mongoose.model('application',applicationSchema);

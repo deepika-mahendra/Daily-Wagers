@@ -13,4 +13,4 @@ restRouter.use('/req',requireRouter);
 restRouter.use('/skills',skillsRouter);
 restRouter.use('/employer',employerRouter);
 restRouter.use('/application',applicationRouter);
-restRouter.use('/work',workRouter);
+restRouter.use('/workmap',workRouter);

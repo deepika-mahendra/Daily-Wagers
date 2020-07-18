@@ -1,14 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-interface Food {
-  value: string;
-  viewValue: string;
-}
 
-interface Car {
-  value: string;
-  viewValue: string;
-}
+
+import { ApplicationService } from '../view-requirements/application.service';
+import { WorkmappingService } from '../work-mapp/workmapping.service';
+
+import { WorkreqService } from '../add-workrequirement/workreq.service';
 @Component({
   selector: 'app-add-employee',
   templateUrl: './add-employee.component.html',
@@ -17,25 +14,36 @@ interface Car {
 
 
 export class AddEmployeeComponent implements OnInit {
-  
-  selectedValue: string;
-  selectedCar: string;
-  constructor() { }
+  workmapping: any;
+  workList: any;
+  disable:Boolean = true;
 
+  constructor(private applicationService:ApplicationService,
+    private workmappigService:WorkmappingService,private workreqService : WorkreqService) { }
+
+  employeeList:any=[];
+  applicationdetail:any=[];
   ngOnInit(): void {
+   this.workreqService.getWorkreq().subscribe(data =>{
+     this.workList = data;
+     console.log(this.workList);
+   });
+   this.appliedwork(this.workList);
   }
-
-  foods: Food[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'}
-  ];
-
-  cars: Car[] = [
-    {value: 'volvo', viewValue: 'Volvo'},
-    {value: 'saab', viewValue: 'Saab'},
-    {value: 'mercedes', viewValue: 'Mercedes'}
-  ];
-
+  appliedwork(id){
+    this.applicationService.getApplication(id).subscribe(data => {
+      this.applicationdetail = data;
+      console.log(this.applicationdetail);
+    })
+  }
+assignWork(employee_id,req_id){
+  this.workmapping.employee_id=employee_id;
+  this.workmapping.req_id = req_id;
+  this.workmappigService.createWorkmap(this.workmapping).subscribe(data => {
+    alert("work assigned");
+    console.log(data);
+  },
+err => console.error(err));
+}
 
 }

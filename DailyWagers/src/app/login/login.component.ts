@@ -2,9 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup , FormBuilder , Validators,ReactiveFormsModule} from '@angular/forms'
 
 import {MatSnackBar} from '@angular/material/snack-bar';
-//import { SharedService } from './login.service';
-import { Router } from '@angular/router';
+
+import { Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { LoginService } from './login.service';
+import { SharedService } from './shared.service';
+import { config, BehaviorSubject, Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { User } from './login';
 
 
 @Component({
@@ -16,10 +20,16 @@ export class LoginComponent implements OnInit {
  
   signupForm:FormGroup;
   loginForm:FormGroup;
+
+  
   constructor(private fb:FormBuilder ,
      private _snackBar: MatSnackBar,
      private  loginService:LoginService,
-     private router :Router) { }
+     private sharedService:SharedService,
+     private router :Router,
+     private http: HttpClient) {
+   
+      }
 
   ngOnInit(): void {
      this.createSignupForm();
@@ -42,7 +52,7 @@ export class LoginComponent implements OnInit {
     })
   }
   signup(){
-    this.signupForm.value.role="user";
+    this.loginForm.value.role="user";
     this.loginService.createUser( this.signupForm.value).subscribe(data=>{
       this._snackBar.open('signup Successful', 'Success', {
         duration: 2000,
@@ -56,19 +66,34 @@ export class LoginComponent implements OnInit {
   }
   
   login(){
+    
     this.loginService.loginUser( this.loginForm.value).subscribe(data=>{
       this._snackBar.open('login Successful', 'Success', {
         duration: 2000,
       });
       
-      this.router.navigate(['admin/home']);
+      if(data.role=='admin'){
+        this.sharedService.updateMessage(data);
+        this.router.navigate(['admin']);
+      }
+      else{
+        this.sharedService.updateMessage(data);
+        this.router.navigate(['user']);
+      }
       console.log(data);
   
     },
    err=>console.log(err)) ; 
    }
 
+  }
+
+
+
+  
+
+
    
-   }
+   
 
 

@@ -15,7 +15,8 @@ import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { pathToFileURL } from 'url';
 import { RegistrationComponent } from './registration/registration.component';
 import { AdmincardsComponent } from './admincards/admincards.component';
-import { UserWorkCardComponent } from './user-work-card/user-work-card.component';
+import { WorkMappComponent } from './work-mapp/work-mapp.component';
+
 
 const routes: Routes = [
   {path:'',redirectTo:'/login',pathMatch:'full'},
@@ -48,7 +49,11 @@ const routes: Routes = [
     {
     path:  'WorkReq-List',
     component:  WorkrequirementListComponent
-    }
+    },
+    {
+      path:  'WorkMap',
+      component:  WorkMappComponent
+      }
 
     ]
   

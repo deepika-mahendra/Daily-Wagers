@@ -38,7 +38,10 @@ import { AdmincardsComponent } from './admincards/admincards.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatExpansionModule} from '@angular/material/expansion';
-import { UserWorkCardComponent } from './user-work-card/user-work-card.component';
+import { WorkMappComponent } from './work-mapp/work-mapp.component';
+import { SharedService } from './login/shared.service';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
+
 
 @NgModule({
   
@@ -60,7 +63,9 @@ import { UserWorkCardComponent } from './user-work-card/user-work-card.component
    
     RegistrationComponent,
     AdmincardsComponent,
-    UserWorkCardComponent
+    WorkMappComponent,
+    EditProfileComponent,
+  
 
   ],
   imports: [
@@ -87,7 +92,7 @@ import { UserWorkCardComponent } from './user-work-card/user-work-card.component
 
    
   ],
-  providers: [],
+  providers: [SharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

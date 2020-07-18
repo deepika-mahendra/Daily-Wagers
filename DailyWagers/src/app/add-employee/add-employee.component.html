@@ -1,60 +1,38 @@
 
-<div class="container-fluid"  style="background-color: white;"> 
+
     <h4>Add Employee</h4>
-    <form class="form-container">
-	<div class="row">
-		<div class="col-6">
-            <mat-form-field>
-                <mat-label>User Name</mat-label>
-                <mat-select [(ngModel)]="selectedValue" name="food">
-                  <mat-option *ngFor="let food of foods" [value]="food.value">
-                    {{food.viewValue}}
-                  </mat-option>
-                </mat-select>
-              </mat-form-field>
-		</div>
-		<div class="col-6">
-            <mat-form-field >
-                <input matInput placeholder="Email" type="email" >
-                
-              </mat-form-field>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-6">
-            <mat-form-field >
-                <input matInput placeholder="Skills" type="text" >
-                
-              </mat-form-field>
-		</div>
-		<div class="col-6">
-            <mat-form-field >
-                <input matInput placeholder="Experience(yrs)" type="number" >
-                
-              </mat-form-field>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-6">
-            <mat-form-field>
-                <input matInput placeholder="pay" type="text" >
-                
-              </mat-form-field>
-		</div>
-		<div class="col-6">
-            <mat-form-field >
-                <input matInput placeholder="duration(hrs)" type="number" >
-                
-              </mat-form-field>
-		</div>
-	</div>
-	
-    <button
-    mat-raised-button
-    color="primary"
-    class="login-button">
-    Add Employee
-  </button>
-</form>
-</div>
+
+      <div class="row">
+     <div class="col-lg-4 " *ngFor="let work of workList">
+       <div class="card">
+         <div class="card-body">
+          <h5> Title : <span>{{work.title}}</span> </h5>
+          <h5> Employer : <span>{{work.employer}}</span> </h5>
+          <h5> Location : <span>{{work.location}}</span> </h5>
+          <h5> Skill Required : <span>{{work.skill_req}}</span> </h5>
+          <h5> Duration : <span>{{work.duration}}</span> </h5>
+          <h5> Date : <span>{{work.start_dt}} to {{work.end_dt}}</span> </h5>
+          <h5> Worker Required : <span>{{work.worker_req}}</span> </h5>
+          <h5> Payment : <span>{{work.payment}}</span> </h5>
+         </div>
+         <div class="card-footer">
+          <mat-form-field>
+            <mat-label>Employee</mat-label>
+            <mat-select #user multiple >
+              <mat-option *ngFor="let app of applicationdetail" [value]="app.employee_id._id">
+                {{app.employee_id.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <button mat-raised-button  color="success" (click)="appliedwork(work._id)" class="login-button"type="submit">Applied user</button>
+          <button mat-raised-button  color="primary" (click)="assignWork(user.value,work.req_id)" class="login-button"type="submit">Assign</button>
+         </div>
+       </div>
+     </div>
+
+   </div>
+
+
+
+
 
