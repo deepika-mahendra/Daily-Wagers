@@ -19,11 +19,17 @@ export class AddEmployerComponent implements OnInit {
 
   createForm(){
     this.createEmployerForm =this.fb.group({
-  
+      name:['',Validators.required],
+      location:['',Validators.required],
+      contact:['',Validators.required],
+      alternate:['',Validators.required],
+      Office_email:['',Validators.required],
+      type:['',Validators.required],
+      point_of_contact:['',Validators.required],
       
     })
   }
-  addEmployer(){
+  addEmployers(){
     this.employerService.createEmployer( this.createEmployerForm.value).subscribe(data=>{
       this._snackBar.open('Workrequirement Added', 'Successfully', {
         duration: 2000,
