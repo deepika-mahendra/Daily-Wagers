@@ -76,7 +76,7 @@ export class ViewProfileComponent implements OnInit {
       this._snackBar.open('detail saved', 'Successfully', {
         duration: 2000,
       });
-      
+      this.router.navigate(['user']);
       console.log(data);
   
     },

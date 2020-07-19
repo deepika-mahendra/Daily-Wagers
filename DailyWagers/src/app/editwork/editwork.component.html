@@ -24,7 +24,7 @@
             <mat-form-field>
                 <mat-label>Organization/Employer </mat-label>
                 <mat-select [(ngModel)]="item.employer"  formControlName="employer">
-                  <mat-option *ngFor="let employer of employerList" [value]="employer">
+                  <mat-option *ngFor="let employer of employerList" [value]="employer.name">
                     {{employer.name}}
                   </mat-option>
                 </mat-select>
@@ -43,7 +43,7 @@
             <mat-form-field >
                 <mat-label>Skill Required </mat-label>
                 <mat-select [(ngModel)]="item.skill_req" formControlName="skill_req">
-                  <mat-option *ngFor="let skill of skillList" [value]="skill">
+                  <mat-option *ngFor="let skill of skillList" [value]="skill.name">
                     {{skill.name}}
                   </mat-option>
                 </mat-select>

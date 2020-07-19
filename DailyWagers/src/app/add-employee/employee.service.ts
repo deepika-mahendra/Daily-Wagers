@@ -18,7 +18,7 @@ export class EmployeeService {
      
    }
    updateEmployee(model):Observable<Employee>{
-    return this.http.put<Employee>('http://localhost:3000/api/employee',model);
+    return this.http.put<Employee>('http://localhost:3000/api/employee/'+model._id,model);
    
  }
 }

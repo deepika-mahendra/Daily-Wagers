@@ -31,13 +31,23 @@ findOne(req,res){
     .catch(err => res.status(500).json(err));
 },
 
-DeleteElement(req,res){
+// DeleteElement(req,res){
+//     const id = req.params.id;
+//     user.findByIdAndRemove(id).then(user => {
+//         if(!user){
+//             return res.status(400).json({err: "user not found."});
+//         }
+//         return res.json(user);
+//     })
+//     .catch(err => res.status(500).json(err));
+// },
+delete(req,res){
     const id = req.params.id;
-    user.findByIdAndRemove(id).then(user => {
-        if(!user){
+    user.findByIdAndRemove(id).then(data => {
+        if(!data){
             return res.status(400).json({err: "user not found."});
         }
-        return res.json(user);
+        return res.json(data);
     })
     .catch(err => res.status(500).json(err));
 },

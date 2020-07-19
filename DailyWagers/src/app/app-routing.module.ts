@@ -13,11 +13,12 @@ import { AddWorkrequirementComponent } from './add-workrequirement/add-workrequi
 import { WorkrequirementListComponent } from './workrequirement-list/workrequirement-list.component';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { pathToFileURL } from 'url';
-import { RegistrationComponent } from './registration/registration.component';
+
 import { AdmincardsComponent } from './admincards/admincards.component';
 import { WorkMappComponent } from './work-mapp/work-mapp.component';
 import { EditEmployerComponent } from './edit-employer/edit-employer.component';
 import { EditworkComponent } from './editwork/editwork.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 
 const routes: Routes = [
@@ -60,6 +61,7 @@ const routes: Routes = [
       path:  'Edit-Employer',
       component:  EditEmployerComponent
       },
+      
     
     {
       path:  'WorkMap',
@@ -70,21 +72,23 @@ const routes: Routes = [
   
 },
   {path:'login',component:LoginComponent},
+  {
+    path:  'register',
+    component:  ViewProfileComponent
+    },
   {path:'user',component:UserdashboardComponent,
   children: [
     
-    {
-      path:  'registration',
-      component:  RegistrationComponent
-      },
+
     {
     path:  'requirement',
     component: ViewRequirementsComponent
     },
+    
     {
-    path:  'profile',
-    component:  ViewProfileComponent
-    },
+      path:  'Edit-Profile',
+      component:  EditProfileComponent
+      },
     {
     path:  'history',
     component:  ViewWorkHistoryComponent

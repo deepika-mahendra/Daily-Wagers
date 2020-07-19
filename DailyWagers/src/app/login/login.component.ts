@@ -57,8 +57,8 @@ export class LoginComponent implements OnInit {
       this._snackBar.open('signup Successful', 'Success', {
         duration: 2000,
       });
-      
-      this.router.navigate(['user/profile']);
+      this.sharedService.updateMessage(data);
+      this.router.navigate(['register']);
       console.log(data);
   
     },

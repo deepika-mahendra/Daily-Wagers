@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from '../add-employee/employee.service';
 import { Employee } from '../add-employee/employee';
+import { SharedService } from './shared.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employee-list',
@@ -10,7 +12,8 @@ import { Employee } from '../add-employee/employee';
 export class EmployeeListComponent implements OnInit {
 
   employeeList : Employee[];
-  constructor(private employeeService : EmployeeService) { }
+  constructor(private employeeService : EmployeeService,
+    private sharedService: SharedService, private router :Router) { }
   displayedColumns =
   ['actions','name','city','contact','email','experience','skills','gender','isActive'];
 dataSource = [];
@@ -27,6 +30,8 @@ dataSource = [];
   }
   update(item){
     console.log(item);
+    this.sharedService.updateMessage(item._id);
+    this.router.navigate(['admin/Edit-Employee']);
   }
   
 

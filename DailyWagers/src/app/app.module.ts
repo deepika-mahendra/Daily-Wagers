@@ -33,7 +33,7 @@ import { WorkrequirementListComponent } from './workrequirement-list/workrequire
 import {MatSelectModule} from '@angular/material/select';
 import {ReactiveFormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-import { RegistrationComponent } from './registration/registration.component';
+
 import { AdmincardsComponent } from './admincards/admincards.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
@@ -63,7 +63,6 @@ import { EditworkComponent } from './editwork/editwork.component';
     AddWorkrequirementComponent,
     WorkrequirementListComponent,
    
-    RegistrationComponent,
     AdmincardsComponent,
     WorkMappComponent,
     EditProfileComponent,

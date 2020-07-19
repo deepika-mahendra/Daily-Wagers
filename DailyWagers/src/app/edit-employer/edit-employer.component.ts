@@ -8,6 +8,8 @@ import { Employer } from '../add-employer/employer';
 import { SharedService } from '../employer-list/shared.service';
 
 
+
+
 @Component({
   selector: 'app-edit-employer',
   templateUrl: './edit-employer.component.html',
@@ -19,7 +21,7 @@ getdetail = [];
 currentemployer = [];
   constructor(private fb:FormBuilder,  private _snackBar: MatSnackBar,private employerService:EmployerService,
     private sharedService:SharedService,) { }
-  user: Observable<Employer>;
+  
   createEmployerForm:FormGroup;
   ngOnInit(): void {
     this.createform();
