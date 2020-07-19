@@ -12,7 +12,7 @@ export class WorkmappingService {
       return this.http.post<WorkMap>('http://localhost:3000/api/workmap',model);
      
    }
-   getWorkmap():Observable<WorkMap[]>{
-    return this.http.get<WorkMap[]>('http://localhost:3000/api/workmap');
+   getWorkmap(id):Observable<WorkMap[]>{
+    return this.http.get<WorkMap[]>('http://localhost:3000/api/workmap/'+id);
     }
 }

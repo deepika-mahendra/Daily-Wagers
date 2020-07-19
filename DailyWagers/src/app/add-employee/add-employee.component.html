@@ -19,13 +19,13 @@
           <mat-form-field>
             <mat-label>Employee</mat-label>
             <mat-select #user multiple >
-              <mat-option *ngFor="let app of applicationdetail" [value]="app.employee_id._id">
-                {{app.employee_id}}
+              <mat-option *ngFor="let app of docs" [value]="app.employee_id._id">
+                {{app.employee_id.name}}
               </mat-option>
             </mat-select>
           </mat-form-field>
           <button mat-raised-button  color="success" (click)="appliedwork(work._id)" class="login-button"type="submit">Applied user</button>
-          <button mat-raised-button  color="primary" (click)="assignWork(user.value,work.req_id)" class="login-button"type="submit">Assign</button>
+          <button mat-raised-button  color="primary" (click)="assignWork(user.value,work._id)" class="login-button"type="submit">Assign</button>
          </div>
        </div>
      </div>

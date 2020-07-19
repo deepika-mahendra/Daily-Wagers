@@ -10,7 +10,7 @@ const applicationSchema = new schema({
         required:true
     },
     employee_id:{
-        ref:'Emp',
+        ref:'user',
         type:schema.Types.ObjectId,
         required:true,
 

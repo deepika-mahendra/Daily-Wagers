@@ -21,14 +21,12 @@ export default{
               console.log(err);
           }
       },
-      findOne(req,res){
-        const id = req.params.id;
-        work.findById(id).then(data => {
-            if(!data){
-                return res.status(400).json({err: "emp not found."});
-            }
-            return res.json(data);
-        })
+    async findOne(req,res){
+        const {id} = req.params;
+       const options={
+           populate:'req_id'
+       }
+       await work.paginate({'employee_id':id},options).then(data=>req.json(data))
         .catch(err => res.status(500).json(err));
     },
     update(req,res){

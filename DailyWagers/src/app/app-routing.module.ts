@@ -19,6 +19,7 @@ import { WorkMappComponent } from './work-mapp/work-mapp.component';
 import { EditEmployerComponent } from './edit-employer/edit-employer.component';
 import { EditworkComponent } from './editwork/editwork.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { AssignworkComponent } from './assignwork/assignwork.component';
 
 
 const routes: Routes = [
@@ -78,7 +79,10 @@ const routes: Routes = [
     },
   {path:'user',component:UserdashboardComponent,
   children: [
-    
+    {
+      path:  'Assignedwork',
+      component: AssignworkComponent
+      }, 
 
     {
     path:  'requirement',

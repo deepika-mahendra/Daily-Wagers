@@ -43,6 +43,7 @@ import { SharedService } from './login/shared.service';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { EditEmployerComponent } from './edit-employer/edit-employer.component';
 import { EditworkComponent } from './editwork/editwork.component';
+import { AssignworkComponent } from './assignwork/assignwork.component';
 
 
 @NgModule({
@@ -68,6 +69,7 @@ import { EditworkComponent } from './editwork/editwork.component';
     EditProfileComponent,
     EditEmployerComponent,
     EditworkComponent,
+    AssignworkComponent,
   
 
   ],

@@ -78,7 +78,7 @@ export class LoginComponent implements OnInit {
       }
       else{
         this.sharedService.updateMessage(data);
-        this.router.navigate(['user']);
+        this.router.navigate(['user/Assignedwork']);
       }
       console.log(data);
   

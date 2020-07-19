@@ -25,7 +25,7 @@ export default{
       },
     //   findOne(req,res,next){
     //     let {id} = req.params.id;
-    //     application.find({'req_id':id})
+    //     application.findById(id)
     //     .populate('employee_id')
     //     .then(data => {
     //         res.json(data)
@@ -34,11 +34,11 @@ export default{
     // },
 
     findOne(req,res,next){
-        let {id} = req.params.id;
+        let {id} = req.params;
         const options = {
-            populate:'employee_id'
+            populate:'employee_id ref_id'
           }
-        application.paginate({'ref_id':id},options).then(data=> res.json(data))
+        application.paginate({'req_id':id},options).then(data=> res.json(data))
         .catch(err=>res.status(500).json(err))
         console.log(id)
     },

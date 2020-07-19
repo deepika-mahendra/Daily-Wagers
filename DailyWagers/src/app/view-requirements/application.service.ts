@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Application } from './application';
+import { Application, ApplicationPaginate } from './application';
 
 const BaseUrl = 'http://localhost:3000/api/application'
 @Injectable({
@@ -17,7 +17,7 @@ export class ApplicationService {
    getallApplication():Observable<Application[]>{
     return this.http.get<Application[]>(`${BaseUrl}`)
 }
-   getApplication(id):Observable<Application[]>{
-       return this.http.get<Application[]>(`${BaseUrl}`)
+   getApplication(id):Observable<ApplicationPaginate[]>{
+       return this.http.get<ApplicationPaginate[]>('http://localhost:3000/api/application/'+id)
    }
 }
