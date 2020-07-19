@@ -74,7 +74,7 @@ export class LoginComponent implements OnInit {
       
       if(data.role=='admin'){
         this.sharedService.updateMessage(data);
-        this.router.navigate(['admin']);
+        this.router.navigate(['admin/home']);
       }
       else{
         this.sharedService.updateMessage(data);

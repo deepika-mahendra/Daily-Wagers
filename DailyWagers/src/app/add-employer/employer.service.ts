@@ -14,6 +14,8 @@ export class EmployerService {
     }
     createEmployer(model):Observable<Employer>{
       return this.http.post<Employer>('http://localhost:3000/api/employer',model);
-     
    }
+   updateEmployer(model):Observable<Employer>{
+    return this.http.put<Employer>('http://localhost:3000/api/employer/'+ model._id,model);
+ }
 }

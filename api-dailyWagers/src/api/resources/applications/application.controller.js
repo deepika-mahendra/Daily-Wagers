@@ -23,25 +23,25 @@ export default{
               console.log(err);
           }
       },
-      findOne(req,res,next){
-        let {id} = req.params.id;
-        application.find({'req_id':id})
-        .populate('employee_id')
-        .then(data => {
-            res.json(data)
-        })
-        .catch(err => res.status(500).json(err));
-    },
-
-    // findOne(req,res){
+    //   findOne(req,res,next){
     //     let {id} = req.params.id;
-    //     const options = {
-    //         populate:'req_id employee_id'
-    //       }
-    //     application.paginate({'req_id':id},options).then(data=> res.json(data))
-    //     .catch(err=>res.status(500).json(err))
-    //     console.log(id)
+    //     application.find({'req_id':id})
+    //     .populate('employee_id')
+    //     .then(data => {
+    //         res.json(data)
+    //     })
+    //     .catch(err => res.status(500).json(err));
     // },
+
+    findOne(req,res,next){
+        let {id} = req.params.id;
+        const options = {
+            populate:'employee_id'
+          }
+        application.paginate({'ref_id':id},options).then(data=> res.json(data))
+        .catch(err=>res.status(500).json(err))
+        console.log(id)
+    },
     update(req,res){
         const id = req.params.id
         application.findOneAndUpdate({_id:id},{$set:req.body},{new:true}).then(emp=>{

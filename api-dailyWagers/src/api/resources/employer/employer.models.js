@@ -33,7 +33,7 @@ const employerSchema = new schema({
    
     isActive:{
         type:String,
-        default:"True"
+        // default:"True"
         
     },
     created_dt:{

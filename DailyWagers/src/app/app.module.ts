@@ -41,6 +41,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { WorkMappComponent } from './work-mapp/work-mapp.component';
 import { SharedService } from './login/shared.service';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { EditEmployerComponent } from './edit-employer/edit-employer.component';
+import { EditworkComponent } from './editwork/editwork.component';
 
 
 @NgModule({
@@ -65,6 +67,8 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
     AdmincardsComponent,
     WorkMappComponent,
     EditProfileComponent,
+    EditEmployerComponent,
+    EditworkComponent,
   
 
   ],

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { WorkreqService } from '../add-workrequirement/workreq.service';
 import { WorkReq } from '../add-workrequirement/skill';
+import { SharedService } from './shared.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-workrequirement-list',
@@ -10,8 +12,9 @@ import { WorkReq } from '../add-workrequirement/skill';
 export class WorkrequirementListComponent implements OnInit {
 
   workreqList : WorkReq[];
-  constructor(private workreqService : WorkreqService) { }
-  displayedColumns: string[] = ['title','employer','location','skill_req','worker_req','duration','payment','start_dt','end_dt','isActive'];
+  constructor(private workreqService : WorkreqService,
+    private sharedService: SharedService, private router :Router) { }
+  displayedColumns: string[] = ['actions','title','employer','location','skill_req','worker_req','duration','payment','start_dt','end_dt','isActive'];
   dataSource = [];
 
   ngOnInit(): void {
@@ -24,6 +27,11 @@ export class WorkrequirementListComponent implements OnInit {
       this.dataSource = this.workreqList;
       console.log(this.workreqList)
     })
+  }
+  update(item){
+    console.log(item);
+    this.sharedService.updateMessage(item._id);
+    this.router.navigate(['admin/Edit-Work']);
   }
 
 }

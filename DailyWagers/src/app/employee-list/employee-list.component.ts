@@ -11,8 +11,9 @@ export class EmployeeListComponent implements OnInit {
 
   employeeList : Employee[];
   constructor(private employeeService : EmployeeService) { }
-  displayedColumns: string[] = ['name','city','contact','email','experience','skills','gender','isActive'];
-  dataSource = [];
+  displayedColumns =
+  ['actions','name','city','contact','email','experience','skills','gender','isActive'];
+dataSource = [];
   ngOnInit(): void {
     this. getEmployeeList();
   }
@@ -24,5 +25,9 @@ export class EmployeeListComponent implements OnInit {
       console.log(this.employeeList)
     })
   }
+  update(item){
+    console.log(item);
+  }
+  
 
 }

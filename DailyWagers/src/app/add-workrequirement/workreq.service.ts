@@ -15,4 +15,8 @@ export class WorkreqService {
    getWorkreq():Observable<WorkReq[]>{
     return this.http.get<WorkReq[]>('http://localhost:3000/api/req');
     }
+    updateEmployer(model):Observable<WorkReq>{
+      return this.http.put<WorkReq>('http://localhost:3000/api/req/'+ model._id,model);
+   }
+
 }

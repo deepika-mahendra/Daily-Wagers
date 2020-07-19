@@ -16,6 +16,8 @@ import { pathToFileURL } from 'url';
 import { RegistrationComponent } from './registration/registration.component';
 import { AdmincardsComponent } from './admincards/admincards.component';
 import { WorkMappComponent } from './work-mapp/work-mapp.component';
+import { EditEmployerComponent } from './edit-employer/edit-employer.component';
+import { EditworkComponent } from './editwork/editwork.component';
 
 
 const routes: Routes = [
@@ -50,6 +52,15 @@ const routes: Routes = [
     path:  'WorkReq-List',
     component:  WorkrequirementListComponent
     },
+    {
+      path:  'Edit-Work',
+      component:  EditworkComponent
+      },
+    {
+      path:  'Edit-Employer',
+      component:  EditEmployerComponent
+      },
+    
     {
       path:  'WorkMap',
       component:  WorkMappComponent

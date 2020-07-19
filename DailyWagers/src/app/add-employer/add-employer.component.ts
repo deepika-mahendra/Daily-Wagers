@@ -26,10 +26,11 @@ export class AddEmployerComponent implements OnInit {
       Office_email:['',Validators.required],
       type:['',Validators.required],
       point_of_contact:['',Validators.required],
-      
+      isActive:['']
     })
   }
   addEmployers(){
+this.createEmployerForm.value.isActive="true";
     this.employerService.createEmployer( this.createEmployerForm.value).subscribe(data=>{
       this._snackBar.open('Workrequirement Added', 'Successfully', {
         duration: 2000,

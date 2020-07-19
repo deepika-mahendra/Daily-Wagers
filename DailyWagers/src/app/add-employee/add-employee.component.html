@@ -20,7 +20,7 @@
             <mat-label>Employee</mat-label>
             <mat-select #user multiple >
               <mat-option *ngFor="let app of applicationdetail" [value]="app.employee_id._id">
-                {{app.employee_id.name}}
+                {{app.employee_id}}
               </mat-option>
             </mat-select>
           </mat-form-field>
