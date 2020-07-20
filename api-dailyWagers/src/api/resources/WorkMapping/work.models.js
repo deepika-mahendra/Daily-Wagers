@@ -1,15 +1,12 @@
 import mongoose from 'mongoose';
 import user from '../users/user.models';
-import require from '../requirement/requirement.models'
-import { urlencoded } from 'body-parser';
-
-
+import require from '../requirement/requirement.models';
 const schema = mongoose.Schema;
+import mongoosePaginate from 'mongoose-paginate';
 const workSchema = new schema({
     req_id:{
         ref:'require',
         type:schema.Types.ObjectId,
-
         required:true
     },
     employee_id:[{
@@ -19,11 +16,13 @@ const workSchema = new schema({
         
     }],
     isActive:{
-        type:String
+        type:String,
+        default:"True"
     },
     created_dt:{
         type:Date,
-       
+        default:Date.now
     },
 },{collection:'workmapping'});
-export default new mongoose.model('work',workSchema);
+workSchema.plugin(mongoosePaginate);
+export default new mongoose.model('Work',workSchema);

@@ -20,6 +20,7 @@ import { EditEmployerComponent } from './edit-employer/edit-employer.component';
 import { EditworkComponent } from './editwork/editwork.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { AssignworkComponent } from './assignwork/assignwork.component';
+import { EditEmployeeComponent } from './edit-employee/edit-employee.component';
 
 
 const routes: Routes = [
@@ -58,6 +59,10 @@ const routes: Routes = [
       path:  'Edit-Work',
       component:  EditworkComponent
       },
+      {
+        path:  'Edit-Employee',
+        component:  EditEmployeeComponent
+        },
     {
       path:  'Edit-Employer',
       component:  EditEmployerComponent

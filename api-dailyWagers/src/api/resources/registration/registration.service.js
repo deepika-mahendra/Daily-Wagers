@@ -16,7 +16,7 @@ export default{
             skill_req:Joi.string().required(),
             status:Joi.string().required(),
             gender:Joi.string().required(),
-            isActive:Joi.number(),
+            isActive:Joi.string(),
             created_date:Joi.string(),
           
         });

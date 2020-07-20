@@ -37,9 +37,9 @@ export class AssignworkComponent implements OnInit {
     });
   }
   getuserworkmapping(){
-        this.workmappingService.getWorkmap( this.currentUser._id).subscribe(data=>{
+        this.workmappingService.getWorkmap(this.currentUser._id).subscribe(data=>{
      this.assignedwork=data;
-     this.workList=this.assignedwork.docs;
+     this.workList=this.assignedwork;
           console.log(this.workList);
         },
        err=>console.log(err)) ; 

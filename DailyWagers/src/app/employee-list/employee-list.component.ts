@@ -3,6 +3,7 @@ import { EmployeeService } from '../add-employee/employee.service';
 import { Employee } from '../add-employee/employee';
 import { SharedService } from './shared.service';
 import { Router } from '@angular/router';
+import { SkillService } from '../add-workrequirement/skill.service';
 
 @Component({
   selector: 'app-employee-list',
@@ -10,16 +11,20 @@ import { Router } from '@angular/router';
   styleUrls: ['./employee-list.component.scss']
 })
 export class EmployeeListComponent implements OnInit {
-
+  skillList:any=[];
   employeeList : Employee[];
+  
   constructor(private employeeService : EmployeeService,
-    private sharedService: SharedService, private router :Router) { }
+    private sharedService: SharedService, private skillService:SkillService, private router :Router) { }
   displayedColumns =
   ['actions','name','city','contact','email','experience','skills','gender','isActive'];
 dataSource = [];
   ngOnInit(): void {
+    
     this. getEmployeeList();
+  
   }
+ 
   getEmployeeList(){
     this.employeeService.getEmployee().subscribe(res=>{
       this.employeeList=res;
@@ -28,6 +33,7 @@ dataSource = [];
       console.log(this.employeeList)
     })
   }
+
   update(item){
     console.log(item);
     this.sharedService.updateMessage(item._id);

@@ -46,6 +46,7 @@ currentwork = [];
       worker_req:['' ,Validators.required],
       payment:['' ,Validators.required],
       url:['' ,Validators.required],
+      isActive:['']
     })
   }
   getCurrentworkData(){

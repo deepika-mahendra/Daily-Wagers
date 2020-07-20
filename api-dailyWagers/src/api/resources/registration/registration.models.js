@@ -65,7 +65,7 @@ const registrationSchema = new schema({
       
     },
     isActive:{
-        type:Number,
+        type:String,
         default:true
     }
 },{collection:'Employee'});

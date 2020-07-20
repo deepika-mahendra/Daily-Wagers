@@ -44,6 +44,7 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { EditEmployerComponent } from './edit-employer/edit-employer.component';
 import { EditworkComponent } from './editwork/editwork.component';
 import { AssignworkComponent } from './assignwork/assignwork.component';
+import { EditEmployeeComponent } from './edit-employee/edit-employee.component';
 
 
 @NgModule({
@@ -70,6 +71,7 @@ import { AssignworkComponent } from './assignwork/assignwork.component';
     EditEmployerComponent,
     EditworkComponent,
     AssignworkComponent,
+    EditEmployeeComponent,
   
 
   ],

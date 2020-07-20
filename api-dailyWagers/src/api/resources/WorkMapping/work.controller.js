@@ -1,9 +1,9 @@
-import work from './work.models';
+import Work from './work.models';
 import workService from './work.service';
 export default{
     findAll(req,res,next){
         // res.json({msg:"FInd all users!!"})
-        work.find().then(data => res.json(data))
+        Work.find().then(data => res.json(data))
         .catch(err => res.status(500).json(err));
     },
     async create(req,res){
@@ -13,7 +13,7 @@ export default{
                   return res.status(500).json(error);
               }
               //create user
-            await work.create(value)
+            await Work.create(value)
             .then(item => res.json(item))
             .catch(err=> res.status(500).json(err));
               console.log(value);
@@ -21,17 +21,37 @@ export default{
               console.log(err);
           }
       },
-    async findOne(req,res){
-        const {id} = req.params;
-       const options={
-           populate:'req_id'
-       }
-       await work.paginate({'employee_id':id},options).then(data=>req.json(data))
-        .catch(err => res.status(500).json(err));
-    },
+
+//    findOne(req,res,next){
+//         let {id} = req.params;
+//         Work.find({'employee_id':id})
+//         .populate('req_id')
+//         .then(data => {
+//             res.json(data)
+//         })
+//         .catch(err => res.status(500).json(err));
+//     },
+
+//  async findOne(req,res,next){
+//         const {id} = req.params;
+//        const options={
+//            populate:'req_id'
+//        }
+//        await Work.paginate({'employee_id':id}).then(data=>req.json(data))
+//         .catch(err => res.status(500).json(err));
+//         console.log(id);
+//     },
+ findOne(req,res){
+    const {id} = req.params;
+     Work.find({'employee_id':id}).populate('req_id').then(user => {
+        return res.json(user);
+    })
+    .catch(err => res.status(500).json(err));
+},
+
     update(req,res){
         const id = req.params.id
-        work.findOneAndUpdate({_id:id},{$set:req.body},{new:true}).then(emp=>{
+        Work.findOneAndUpdate({_id:id},{$set:req.body},{new:true}).then(emp=>{
             if(!emp){
                 return res.status(400).json({err: "emp not found."});
             }
@@ -41,7 +61,7 @@ export default{
     },
     delete(req,res){
         const id = req.params.id;
-        work.findByIdAndRemove(id).then(data => {
+        Work.findByIdAndRemove(id).then(data => {
             if(!data){
                 return res.status(400).json({err: "user not found."});
             }
