@@ -6,3 +6,11 @@ export class WorkMap{
     created_dt:Date;
     isActive:String;
 }
+export class WorkPaginate{
+    docs:WorkMap[];
+    total:Number;
+    limit:Number;
+    page:Number;
+    pages:Number;
+
+}
