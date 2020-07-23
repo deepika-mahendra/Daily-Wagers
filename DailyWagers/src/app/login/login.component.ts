@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
       password:['',Validators.required],
       // confirmPassword:['',Validators.required],
       contact:['',Validators.required],
-      role:['',Validators.required]
+      // role:['',Validators.required]
     })
   }
   signup(){

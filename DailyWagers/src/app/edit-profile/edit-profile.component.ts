@@ -71,7 +71,7 @@ export class EditProfileComponent implements OnInit {
   getCurrentEmployeeData(){
     this.sharedService.currentData.subscribe(data =>{
   this.profileDetail = data;
-  console.log(this.profileDetail._id);
+  console.log(this.profileDetail);
   this.employeeService.getEmployee().subscribe(data =>{
   this.getdetail=data;
   for(let i = 0 ; i<this.getdetail.length;i++ ){

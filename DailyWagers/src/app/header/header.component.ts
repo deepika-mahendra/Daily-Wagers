@@ -9,6 +9,7 @@ import { SharedService } from '../login/shared.service';
 export class HeaderComponent implements OnInit {
   userObj:any={};
   isHidden:Boolean=true;
+  token: any;
   constructor(private sharedService:SharedService) { }
 
   ngOnInit(): void {
@@ -23,5 +24,13 @@ export class HeaderComponent implements OnInit {
       }
     })
   }
+  // onLogout() {
+  //   this.token = null;
+  //   localStorage.removeItem('eq_user');
+  //   localStorage.clear();
+  //   this.authService.logout().subscribe( s => {
+  //       this.route.navigate(['/login']);
+  //  });
+  // }
 
 }

@@ -7,26 +7,18 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarid">
 		<ul class="navbar-nav  ml-auto" *ngIf=!isHidden>
-			<li class="nav-item">
-				<a href="#" class="nav-link"> <i class="fas fa-search"></i> <input type="name" name="Search" alt="Search " placeholder=" Search"></a>
-      </li>
+		
       <li class="nav-item">
 				<a href="#" class="nav-link">{{userObj.name}}</a>
 			</li>
 
-            <button
-            mat-raised-button
-            color="primary"
-            class="login-button" routerLink="/user/registration">
-            
-            profile info
-          </button>
+         
 			
 			<li class="nav-item dropdown">
                 <button
                 mat-raised-button
                 color="primary"
-                class="login-button">
+                class="login-button"  routerLink="/login" type="reset">
                 Logout 
               </button>
 				

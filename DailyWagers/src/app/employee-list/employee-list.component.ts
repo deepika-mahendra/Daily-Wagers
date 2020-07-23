@@ -17,7 +17,7 @@ export class EmployeeListComponent implements OnInit {
   constructor(private employeeService : EmployeeService,
     private sharedService: SharedService, private skillService:SkillService, private router :Router) { }
   displayedColumns =
-  ['actions','name','city','contact','email','experience','skills','gender','isActive'];
+  ['actions','name','city','contact','email','experience','skill_req','gender','isActive'];
 dataSource = [];
   ngOnInit(): void {
     

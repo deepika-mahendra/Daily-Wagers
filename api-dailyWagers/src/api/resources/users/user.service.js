@@ -6,7 +6,7 @@ export default{
             email:Joi.string().email().required(),
             password:Joi.string().required(),
             contact:Joi.number().required(),
-            role:Joi.string().required()
+            role:Joi.string()
           
         });
         const {error,value} = Joi.validate(body,schema);

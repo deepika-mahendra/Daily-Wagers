@@ -7,7 +7,7 @@ const userSchema = new Schema({
     },
     role:{
         type:String,
-        required:true
+        default:"user"
     },
     employee_id:{
         type:String,

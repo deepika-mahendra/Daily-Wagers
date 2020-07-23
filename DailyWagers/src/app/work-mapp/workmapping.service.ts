@@ -19,4 +19,8 @@ export class WorkmappingService {
    getWorkmap(id):Observable<WorkPaginate[]>{
     return this.http.get<WorkPaginate[]>('http://localhost:3000/api/workmap/'+id);
     }
+    updateWorkMap(id,model):Observable<WorkMap>{
+      return this.http.put<WorkMap>('http://localhost:3000/api/workmap/'+id,model);
+     
+   }
 }

@@ -12,5 +12,7 @@ export class WorkPaginate{
     limit:Number;
     page:Number;
     pages:Number;
+ 
+
 
 }

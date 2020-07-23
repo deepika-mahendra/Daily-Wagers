@@ -7,6 +7,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { FormBuilder } from '@angular/forms';
 import { WorkmappingService } from '../work-mapp/workmapping.service';
 import { SharedService } from '../login/shared.service';
+import { WorkMap } from '../work-mapp/workMap';
 
 
 @Component({
@@ -17,10 +18,11 @@ import { SharedService } from '../login/shared.service';
 export class AssignworkComponent implements OnInit {
   assignedwork:any;
   work: any=[];
-  workList:any=[];
+  workList:any;
   end_date: Date;
-  req: any;
+  req: WorkMap=new WorkMap();
   docs :any=[];
+  works: any;
   constructor(private workreqService:WorkreqService,
     private sharedService:SharedService,
     private applicationService:ApplicationService,
@@ -30,23 +32,31 @@ export class AssignworkComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCurrentUser();
-    this.getuserworkmapping();
+    this.getuserworkmapping();  
   }
   getuserworkmapping(){
-    var todaysDate = new Date();
+    
         this.workmappingService.getWorkmap(this.currentUser._id).subscribe(data=>{
           this.assignedwork=data;
-          this.workList=this.assignedwork;
-          console.log(this.workList);
-    //       this.docs=this.assignedwork.docs;
-    //       console.log(this.docs)
-    //       this.end_date= new Date(this.docs.req_id.end_dt);
-    //       console.log(this.end_date.toDateString());
-    //  console.log(this.assignedwork.end_dt.toDateString());
-          // if (this.end_date > todaysDate)  {
-          //   this.workList=this.assignedwork;
-          //   console.log(this.workList);
-          // }
+          console.log(this.assignedwork)
+          this.workList=this.assignedwork.filter(item=>item.isActive=="True");
+          console.log(this.workList[0].req_id);
+           console.log(new Date(this.workList[0].req_id.end_dt).getTime())
+         console.log((new Date()).getTime());
+         
+
+    for(let i:number=0;i<this.workList.length;i++){
+          if (new Date(this.workList[i].req_id.end_dt).getTime()>(new Date()).getTime())  {
+           console.log(this.workList[i]._id);
+            this.workmappingService.updateWorkMap(this.workList[i]._id,this.req).subscribe(data=>{
+              this.req.isActive="False";
+            })
+          console.log("if condition")
+          }
+          else{
+            console.log("else condition");
+          }
+       }
     
         },
        err=>console.log(err)) ; 

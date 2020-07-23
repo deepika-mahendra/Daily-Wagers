@@ -8,12 +8,12 @@
                 <input matInput [(ngModel)]="item.name" formControlName="name">
               </mat-form-field>
 		</div>
-        <mat-form-field appearance="fill">
-            <mat-label>DOB</mat-label>
-            <input matInput [matDatepicker]="picker" [(ngModel)]="item.dob" formControlName="dob">
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>DOB</mat-label>
+      <input matInput [matDatepicker]="picker" [(ngModel)]="item.dob" formControlName="dob">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
     </div>
     <div class="row">
         <div class="col-lg-4 col-md-5 col-sm-12">
@@ -33,8 +33,8 @@
             <div class="col-lg-4 col-md-5 col-sm-12">
                       <label>Gender</label>
                       <select  [(ngModel)]="item.gender" formControlName="gender" >
-                          <option>Male </option>
-                          <option>Female </option>
+                          <option>male </option>
+                          <option>female </option>
                       </select>
             </div>
         </div>
