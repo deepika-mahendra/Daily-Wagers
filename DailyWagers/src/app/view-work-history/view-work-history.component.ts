@@ -41,7 +41,7 @@ export class ViewWorkHistoryComponent implements OnInit {
   getuserworkMapping(){
     this.workmappingService.getWorkmap(this.currentUser._id).subscribe(data=>{
       this.assignedwork=data;
-      this.workList=this.assignedwork.filter(item=>item.isActive=="True")
+      this.workList=this.assignedwork.filter(item=>item.isActive=="False")
     })
   }
 

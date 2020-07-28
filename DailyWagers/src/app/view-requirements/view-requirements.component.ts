@@ -25,7 +25,7 @@ export class ViewRequirementsComponent implements OnInit {
     ,private fb:FormBuilder) { }
     currentUser:any={};
     userObj : Application = new Application();
-     
+    workReq:any;
   ngOnInit(): void {
     this.getEmployers();
     this.getCurrentUser();
@@ -36,7 +36,12 @@ export class ViewRequirementsComponent implements OnInit {
     });
   }
   apply(item,event: any) {
-    this.userObj.employee_id = this.currentUser._id;
+    
+   
+  this.applicationService.getmatchApplication(item._id,this.currentUser._id).subscribe(data=>{
+    if(data.length==0){
+      console.log("assigned");
+      this.userObj.employee_id = this.currentUser._id;
     this.userObj.req_id = item._id;
   
     this.applicationService.createApplication(this.userObj).subscribe(res =>{
@@ -47,10 +52,24 @@ export class ViewRequirementsComponent implements OnInit {
       // this.router.navigate(['user']);
     },
     err =>console.log(err))
+    }
+    else{
+      console.log("already assigned")
+      console.log(data)
+      this._snackBar.open('Already applied', '', {
+        duration: 2000,
+      });
+    }
+  })
+
+  
+    
+    
   }
   getEmployers(){
     this.workreqService.getWorkreq().subscribe(data => {
-  this.workList = data;
+  this.workReq = data;
+  this.workList=this.workReq.filter(item=>item.isActive=="True")
   console.log(this.workList);
   
     },

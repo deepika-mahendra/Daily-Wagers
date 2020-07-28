@@ -39,7 +39,7 @@ export class AssignworkComponent implements OnInit {
         this.workmappingService.getWorkmap(this.currentUser._id).subscribe(data=>{
           this.assignedwork=data;
           console.log(this.assignedwork)
-          this.workList=this.assignedwork.filter(item=>item.isActive=="False");
+          this.workList=this.assignedwork.filter(item=>item.isActive=="True");
           console.log(this.workList[0].req_id);
            console.log(new Date(this.workList[0].req_id.end_dt).getTime())
          console.log((new Date()).getTime());

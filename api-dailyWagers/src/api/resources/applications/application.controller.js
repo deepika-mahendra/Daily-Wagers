@@ -62,6 +62,12 @@ export default{
         })
         .catch(err => res.status(500).json(err));
     },
+    findName(req,res,next){
+        let {req_id} = req.params;
+        let {employee_id} = req.params;
+        application.find({$and:[{"req_id":req_id},{"employee_id":employee_id}]}).then(data=>res.json(data))
+        .catch(err=>res.status(500).json(err))
+    }
     
 
 }

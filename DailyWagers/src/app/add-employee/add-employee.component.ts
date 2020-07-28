@@ -19,7 +19,9 @@ export class AddEmployeeComponent implements OnInit {
   workList: any;
   disable:Boolean = true;
   docs :any=[];
+  applicationD:any;
   application:Application=new Application();
+  workReq:any;
   constructor(private applicationService:ApplicationService,
     private workmappigService:WorkmappingService,private workreqService : WorkreqService) { }
 
@@ -27,7 +29,9 @@ export class AddEmployeeComponent implements OnInit {
   applicationdetail:any=[];
   ngOnInit(): void {
    this.workreqService.getWorkreq().subscribe(data =>{
-     this.workList = data;
+     this.workReq = data;
+     this.workList= this.workReq.filter(item=>item.isActive=="True");
+     
      console.log(this.workList);
    });
    this.appliedwork(this.workList);
@@ -36,6 +40,7 @@ export class AddEmployeeComponent implements OnInit {
     this.applicationService.getApplication(id).subscribe(data => {
       this.applicationdetail = data;
       this.docs=this.applicationdetail.docs;
+      // this.applicationD=this.docs;
       console.log(this.docs);
     })
   }

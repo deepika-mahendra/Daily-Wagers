@@ -20,4 +20,8 @@ export class ApplicationService {
    getApplication(id):Observable<ApplicationPaginate[]>{
        return this.http.get<ApplicationPaginate[]>('http://localhost:3000/api/application/'+id)
    }
+   getmatchApplication(req_id,employee_id):Observable<Application[]>{
+    return this.http.get<Application[]>('http://localhost:3000/api/application/'+req_id+'/'+employee_id)
+}
+
 }

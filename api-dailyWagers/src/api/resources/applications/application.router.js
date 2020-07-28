@@ -9,3 +9,5 @@ applicationRouter.route('/:id')
 .put(applicationController.update)
 .delete(applicationController.delete)
 .get(applicationController.findOne);
+applicationRouter.route('/:req_id/:employee_id')
+.get(applicationController.findName)
