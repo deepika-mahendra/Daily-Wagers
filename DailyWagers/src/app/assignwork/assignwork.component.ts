@@ -39,22 +39,23 @@ export class AssignworkComponent implements OnInit {
         this.workmappingService.getWorkmap(this.currentUser._id).subscribe(data=>{
           this.assignedwork=data;
           console.log(this.assignedwork)
-          this.workList=this.assignedwork.filter(item=>item.isActive=="True");
+          this.workList=this.assignedwork.filter(item=>item.isActive=="False");
           console.log(this.workList[0].req_id);
            console.log(new Date(this.workList[0].req_id.end_dt).getTime())
          console.log((new Date()).getTime());
-         
+        //  this.req.isActive="False";
 
     for(let i:number=0;i<this.workList.length;i++){
           if (new Date(this.workList[i].req_id.end_dt).getTime()>(new Date()).getTime())  {
            console.log(this.workList[i]._id);
             this.workmappingService.updateWorkMap(this.workList[i]._id,this.req).subscribe(data=>{
-              this.req.isActive="False";
+              
             })
           console.log("if condition")
           }
           else{
             console.log("else condition");
+           
           }
        }
     
